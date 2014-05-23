@@ -1,0 +1,14 @@
+<table>
+  <tr ng-repeat="row in flag track by $index" class="row">
+    <td ng-repeat="cell in row track by $index" ng-style="{ 'background-color': cell }" class="col-xs-1" ng-click="flag[$parent.$index][$index] = color">{{cell}}</td>
+  </tr>
+</table>
+
+<div>
+  <label for="colorInput">Select colour:</label>
+  <input id="colorInput" type="color" ng-model="color">
+</div>
+
+<div>
+  <button class="btn btn-primary" ng-click="updateHolidayLights(flag)">Update Holiday Lights</button>
+</div>
