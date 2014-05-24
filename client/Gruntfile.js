@@ -355,9 +355,9 @@ module.exports = function(grunt) {
 				'compass'
 			],
 			dist: [
-				'compass:dist',
-				'imagemin',
-				'svgmin'
+				'compass:dist'
+				// 'imagemin',
+				// 'svgmin'
 			]
 		},
 
@@ -405,7 +405,7 @@ module.exports = function(grunt) {
 		grunt.task.run([
 			'clean:server',
 			'bowerInstall',
-			//'concurrent:server',
+			'concurrent:server',
 			'configureProxies:server',
 			'autoprefixer',
 			'connect:livereload',
@@ -420,7 +420,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('test', [
 		'clean:server',
-		// 'concurrent:test',
+		'concurrent:test',
 		'autoprefixer',
 		'connect:test',
 		'karma'
@@ -429,18 +429,18 @@ module.exports = function(grunt) {
 	grunt.registerTask('build', [
 		'clean:dist',
 		'bowerInstall',
-		'useminPrepare',
-		// 'concurrent:dist',
+		// 'useminPrepare',
+		'concurrent:dist',
 		'autoprefixer',
-		'concat',
+		// 'concat',
 		'ngmin',
 		'copy:dist',
-		'cdnify',
+		// 'cdnify',
 		'cssmin',
-		'uglify',
+		// 'uglify',
 		'rev',
-		'usemin',
-		'htmlmin'
+		//'usemin',
+		// 'htmlmin'
 	]);
 
 	grunt.registerTask('default', [
