@@ -4,11 +4,27 @@
   </tr>
 </table>
 
+<hr>
 <div>
   <label for="colorInput">Select colour:</label>
   <input id="colorInput" type="color" ng-model="color">
 </div>
 
+<hr>
 <div>
-  <button class="btn btn-primary" ng-click="updateHolidayLights(flag)">Update Holiday Lights</button>
+  <button class="btn btn-success" ng-click="save(selectedFlag)">Save</button>
+</div>
+
+
+<hr>
+<div>
+	<ul class="list-group">
+		<li 
+			class="list-group-item" 
+			ng-repeat="item in flags | orderBy: 'name'"
+			ng-class="{ 'list-group-item-success': item.lights.length, 'list-group-item-info': selectedFlag == item }"
+			ng-click="setCurrentFlag(item)">
+			{{ item.name }}
+		</li>
+	</ul>
 </div>

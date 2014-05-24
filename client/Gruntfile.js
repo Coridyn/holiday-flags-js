@@ -70,7 +70,7 @@ module.exports = function(grunt) {
 				livereload: 35729
 			},
 			proxies: [{
-				context: ['/lights'], // the context of the data service
+				context: ['/lights', '/flags', '/flag', '/fixture'], // the context of the data service
 				host: 'localhost', // wherever the data service is running
 				port: 3000 // the port that the data service is running on
 			}],
