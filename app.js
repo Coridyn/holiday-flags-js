@@ -18,7 +18,11 @@ var flagsMap = {
 	'brazil': 'brazil',
 	'newzealand': 'newzealand',
 	'thailand': 'thailand',
-	'argentina': 'argentina'
+	'argentina': 'argentina',
+	'scotland': 'scotland',
+	'chile': 'chile',
+	'russia': 'russia',
+	'ireland': 'ireland'
 };
 
 var track = _.map(flagsMap, function(value, key) {
@@ -190,6 +194,50 @@ app.get('/fixture', function(req, res) {
 			["#0242fd", "#0242fd", "#0242fd", "#0242fd", "#0242fd", "#0242fd", "#0242fd"],
 			["#fcf7fa", "#fcf7fa", "#fcf7fa", "#fcf7fa", "#fcf7fa", "#fcf7fa", "#fcf7fa"],
 			["#ff0000", "#ff0000", "#ff0000", "#ff0000", "#ff0000", "#ff0000", "#ff0000"]
+		]
+	}, {
+		name: 'scotland',
+		lights: [
+			["#fffbf9", "#0b32ff", "#0b32ff", "#0b32ff", "#0b32ff", "#0b32ff", "#fffbf9"],
+			["#0b32ff", "#fffbf9", "#0b32ff", "#0b32ff", "#0b32ff", "#fffbf9", "#0b32ff"],
+			["#0b32ff", "#0b32ff", "#fffbf9", "#0b32ff", "#fffbf9", "#0b32ff", "#0b32ff"],
+			["#0b32ff", "#0b32ff", "#0b32ff", "#fffbf9", "#0b32ff", "#0b32ff", "#0b32ff"],
+			["#0b32ff", "#0b32ff", "#fffbf9", "#0b32ff", "#fffbf9", "#0b32ff", "#0b32ff"],
+			["#0b32ff", "#fffbf9", "#0b32ff", "#0b32ff", "#0b32ff", "#fffbf9", "#0b32ff"],
+			["#fffbf9", "#0b32ff", "#0b32ff", "#0b32ff", "#0b32ff", "#0b32ff", "#fffbf9"]
+		]
+	}, {
+		name: 'chile',
+		lights: [
+			["#0338fd", "#0338fd", "#0338fd", "#fcfcf2", "#fcfcf2", "#fcfcf2", "#fcfcf2"],
+			["#0338fd", "#fcfcf2", "#0338fd", "#fcfcf2", "#fcfcf2", "#fcfcf2", "#fcfcf2"],
+			["#0338fd", "#0338fd", "#0338fd", "#fcfcf2", "#fcfcf2", "#fcfcf2", "#fcfcf2"],
+			["#ff2739", "#ff2739", "#ff2739", "#ff2739", "#ff2739", "#ff2739", "#ff2739"],
+			["#ff2739", "#ff2739", "#ff2739", "#ff2739", "#ff2739", "#ff2739", "#ff2739"],
+			["#ff2739", "#ff2739", "#ff2739", "#ff2739", "#ff2739", "#ff2739", "#ff2739"],
+			["#ff2739", "#ff2739", "#ff2739", "#ff2739", "#ff2739", "#ff2739", "#ff2739"]
+		]
+	}, {
+		name: 'russia',
+		lights: [
+			["#fbfcf8", "#fbfcf8", "#fbfcf8", "#fbfcf8", "#fbfcf8", "#fbfcf8", "#fbfcf8"],
+			["#fbfcf8", "#fcfcf2", "#fbfcf8", "#fbfcf8", "#fbfcf8", "#fbfcf8", "#fbfcf8"],
+			["#0338fd", "#0338fd", "#0338fd", "#033cfd", "#033cfd", "#033cfd", "#033cfd"],
+			["#033cfd", "#033cfd", "#033cfd", "#033cfd", "#033cfd", "#033cfd", "#033cfd"],
+			["#033cfd", "#033cfd", "#033cfd", "#033cfd", "#033cfd", "#033cfd", "#033cfd"],
+			["#ff2616", "#ff2616", "#ff2739", "#ff2739", "#ff2616", "#ff2616", "#ff2739"],
+			["#ff2739", "#ff2739", "#ff2616", "#ff2616", "#ff2739", "#ff2739", "#ff2739"]
+		]
+	}, {
+		name: 'ireland',
+		lights: [
+			["#00cc44", "#00cc44", "#fffbff", "#fffbff", "#fffbff", "#ff701c", "#ff701c"],
+			["#00cc44", "#00cc44", "#fffbff", "#fffbff", "#fffbff", "#ff701c", "#ff701c"],
+			["#00cc44", "#00cc44", "#fffbff", "#fffbff", "#fffbff", "#ff701c", "#ff701c"],
+			["#00cc44", "#00cc44", "#fffbff", "#fffbff", "#fffbff", "#ff701c", "#ff701c"],
+			["#00cc44", "#00cc44", "#fffbff", "#fffbff", "#fffbff", "#ff701c", "#ff701c"],
+			["#00cc44", "#00cc44", "#fffbff", "#fffbff", "#fffbff", "#ff701c", "#ff701c"],
+			["#00cc44", "#00cc44", "#fffbff", "#fffbff", "#fffbff", "#ff701c", "#ff701c"]
 		]
 	}, function(err) {
 		if (err) return res.send(500);
