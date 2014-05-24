@@ -95,4 +95,8 @@ angular.module('clientApp').controller('MainCtrl', function($scope, $http, FlagS
 		})
 
 	};
+	
+	$scope.setColor = function(row, col, color){
+		$scope.flag[row][col] = color;
+	}
 });

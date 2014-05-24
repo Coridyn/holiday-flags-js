@@ -355,9 +355,9 @@ module.exports = function(grunt) {
 				'compass'
 			],
 			dist: [
-				'compass:dist',
-				'imagemin',
-				'svgmin'
+				'compass:dist'
+				// 'imagemin',
+				// 'svgmin'
 			]
 		},
 
@@ -429,18 +429,18 @@ module.exports = function(grunt) {
 	grunt.registerTask('build', [
 		'clean:dist',
 		'bowerInstall',
-		'useminPrepare',
+		// 'useminPrepare',
 		'concurrent:dist',
 		'autoprefixer',
-		'concat',
+		// 'concat',
 		'ngmin',
 		'copy:dist',
-		'cdnify',
+		// 'cdnify',
 		'cssmin',
-		'uglify',
+		// 'uglify',
 		'rev',
-		'usemin',
-		'htmlmin'
+		//'usemin',
+		// 'htmlmin'
 	]);
 
 	grunt.registerTask('default', [
