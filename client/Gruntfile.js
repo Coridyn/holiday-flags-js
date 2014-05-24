@@ -405,7 +405,7 @@ module.exports = function(grunt) {
 		grunt.task.run([
 			'clean:server',
 			'bowerInstall',
-			'concurrent:server',
+			//'concurrent:server',
 			'configureProxies:server',
 			'autoprefixer',
 			'connect:livereload',
@@ -420,7 +420,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('test', [
 		'clean:server',
-		'concurrent:test',
+		// 'concurrent:test',
 		'autoprefixer',
 		'connect:test',
 		'karma'
@@ -430,7 +430,7 @@ module.exports = function(grunt) {
 		'clean:dist',
 		'bowerInstall',
 		'useminPrepare',
-		'concurrent:dist',
+		// 'concurrent:dist',
 		'autoprefixer',
 		'concat',
 		'ngmin',
