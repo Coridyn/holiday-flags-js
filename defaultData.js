@@ -56,13 +56,13 @@ module.exports = [{
 }, {
 	name: 'argentina',
 	lights: [
-		["#ff0000", "#ff0000", "#ff0000", "#ff0000", "#ff0000", "#ff0000", "#ff0000"],
-		["#fcf7fa", "#fcf7fa", "#fcf7fa", "#f7f6fc", "#fcf7fa", "#fcf7fa", "#fcf7fa"],
-		["#0242fd", "#0242fd", "#0242fd", "#0242fd", "#0242fd", "#0242fd", "#0242fd"],
-		["#0242fd", "#0242fd", "#0242fd", "#0242fd", "#0242fd", "#0242fd", "#0242fd"],
-		["#0242fd", "#0242fd", "#0242fd", "#0242fd", "#0242fd", "#0242fd", "#0242fd"],
-		["#fcf7fa", "#fcf7fa", "#fcf7fa", "#fcf7fa", "#fcf7fa", "#fcf7fa", "#fcf7fa"],
-		["#ff0000", "#ff0000", "#ff0000", "#ff0000", "#ff0000", "#ff0000", "#ff0000"]
+		["#00eaf7", "#00eaf7", "#00eaf7", "#00eaf7", "#00eaf7", "#00eaf7", "#00eaf7"],
+		["#00eaf7", "#00eaf7", "#00eaf7", "#00eaf7", "#00eaf7", "#00eaf7", "#00eaf7"],
+		["#ffffff", "#ffffff", "#ffffff", "#ffde00", "#ffffff", "#ffffff", "#ffffff"],
+		["#ffffff", "#ffffff", "#ffde00", "#ffde00", "#ffde00", "#ffffff", "#ffffff"],
+		["#ffffff", "#ffffff", "#ffffff", "#ffde00", "#ffffff", "#ffffff", "#ffffff"],
+		["#00eaf7", "#00eaf7", "#00eaf7", "#00eaf7", "#00eaf7", "#00eaf7", "#00eaf7"],
+		["#00eaf7", "#00eaf7", "#00eaf7", "#00eaf7", "#00eaf7", "#00eaf7", "#00eaf7"]
 	]
 }, {
 	name: 'scotland',
