@@ -10,12 +10,27 @@ _.forEach(defaultFlags, function(item) {
 });
 
 // TODO: Read this from an argument.
-if (true) {
+var hasMongoose = false;
+try {
+	require.resolve('mongoose');
+	hasMongoose = true;
+} catch(e){
+	
+}
+
+if (hasMongoose) {
 	var MongoService = require('./server/mongoose.js')(server.getApp(), defaultFlags);
+} else {
+	var MongoService = require('./server/non-mongo.js')(server.getApp(), defaultFlags);
 }
 
 // Twitter
 if (true) {
+	var flagMap = {};
+	_.forEach(defaultFlags, function(flagItem){
+		flagMap[flagItem.name] = flagItem.lights;
+	});;
+	
 	var TwitterService = require('./server/twitter');
 
 	TwitterService(flagsMap, function(flagId) {

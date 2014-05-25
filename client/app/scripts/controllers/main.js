@@ -13,7 +13,7 @@ angular.module('clientApp').service('FlagService', function($http) {
 		for (var i = 0; i < rowCount; i++) {
 			var row = [];
 			for (var j = 0; j < 7; j++) {
-				row.push('#000');
+				row.push('#000000');
 			}
 			flag.push(row);
 		};
