@@ -14,8 +14,8 @@ var hasMongoose = false;
 try {
 	require.resolve('mongoose');
 	hasMongoose = true;
-} catch(e){
-	
+} catch (e) {
+
 }
 
 if (hasMongoose) {
@@ -27,10 +27,10 @@ if (hasMongoose) {
 // Twitter
 if (true) {
 	var flagMap = {};
-	_.forEach(defaultFlags, function(flagItem){
+	_.forEach(defaultFlags, function(flagItem) {
 		flagMap[flagItem.name] = flagItem.lights;
 	});;
-	
+
 	var TwitterService = require('./server/twitter');
 
 	TwitterService(flagsMap, function(flagId) {

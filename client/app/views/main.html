@@ -4,6 +4,9 @@
 	</tr>
 </table>
 
+<br>
+<button class="btn btn-primary" ng-click="updateHolidayLights(flag)">Update Holiday Lights</button>
+
 <hr>
 <div>
   <h3>Colour picker:</h3>
@@ -17,16 +20,16 @@
 </div>
 
 <hr>
-<div>
-	<button class="btn btn-primary" ng-click="updateHolidayLights(flag)">Update Holiday Lights</button>
-</div>
 
-<div class="panel">
-	<div class="well">
-		<input type="text" ng-model="flagName" />
-		<button class="btn btn-success" ng-click="save(selectedFlag)">Save</button>
-		
-		<button class="btn btn-warning pull-right" ng-click="newFlag()">New</button>
+<div class="well">
+	<div class="row">
+		<div class="input-group">
+			<input type="text" class="form-control" ng-model="flagName" />
+			<span class="input-group-btn">
+				<button class="btn btn-success" ng-click="save(selectedFlag)">Save</button>
+				<button class="btn btn-warning" ng-click="newFlag()">New</button>
+			</span>
+		</div>
 	</div>
 </div>
 
