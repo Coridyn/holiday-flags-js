@@ -41,10 +41,20 @@ angular.module('clientApp').controller('MainCtrl', function($scope, $http, FlagS
 	var savedFlags = [];
 	
 	$scope.flag = FlagService.getFlag();
-	$scope.color = "#ff0000";
 	$scope.flagName = '';
-	
-	
+	$scope.color = '#ff0000';
+	$scope.colors = [
+		'#ff0000',
+		'#00ce00',
+		'#0000ff',
+		'#ffffff',
+		'#000000',
+		'#cccccc',
+		'#ffde00',
+		'#ff8500',
+		'#00eaf7'
+	];
+
 	$scope.flags = [];
 	$http.get('/flags')
 		.success(function(data) {
@@ -95,20 +105,18 @@ angular.module('clientApp').controller('MainCtrl', function($scope, $http, FlagS
 		// Update the list of flags
 		$scope.flags.unshift(newFlag);
 	};
-	
-	
-	
-	$scope.newFlag = function(){
-		angular.forEach($scope.flag, function(row, rowIndex){
-			angular.forEach(row, function(item, cellIndex){
+
+	$scope.newFlag = function() {
+		angular.forEach($scope.flag, function(row, rowIndex) {
+			angular.forEach(row, function(item, cellIndex) {
 				$scope.flag[rowIndex][cellIndex] = '#000000';
 			});
 		});
 		
 		$scope.flagName = '';
 	};
-	
-	$scope.setColor = function(row, col, color){
+
+	$scope.setColor = function(row, col, color) {
 		$scope.flag[row][col] = color;
 	}
 });
