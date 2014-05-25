@@ -27,23 +27,6 @@ angular.module('clientApp').service('FlagService', function($http) {
 		}
 		return flag;
 	};
-
-	this.flatFlag = function(flag) {
-		var flatFlag = [];
-		flatFlag.push('#000000');
-
-		for (var i = 0; i < flag.length; i++) {
-			var row = flag[i].concat();
-
-			if (i % 2 == 1) {
-				row.reverse();
-			}
-			flatFlag = flatFlag.concat(row);
-		}
-
-		return flatFlag;
-	};
-
 });
 
 angular.module('clientApp').controller('MainCtrl', function($scope, $http, FlagService) {
@@ -56,12 +39,8 @@ angular.module('clientApp').controller('MainCtrl', function($scope, $http, FlagS
 		});
 
 	$scope.updateHolidayLights = function(flag) {
-		var flatFlag = FlagService.flatFlag(flag);
-
-		console.log(flatFlag);
-
 		$http.post('/lights', {
-			flag: flatFlag
+			flag: flag
 		}).success(function(data) {
 			console.log('OK!', data);
 		}).error(function() {
