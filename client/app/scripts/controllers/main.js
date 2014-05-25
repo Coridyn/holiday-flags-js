@@ -75,6 +75,14 @@ angular.module('clientApp').controller('MainCtrl', function($scope, $http, FlagS
 
 	};
 	
+	$scope.newFlag = function(){
+		angular.forEach($scope.flag, function(row, rowIndex){
+			angular.forEach(row, function(item, cellIndex){
+				$scope.flag[rowIndex][cellIndex] = '#000000';
+			});
+		});
+	};
+	
 	$scope.setColor = function(row, col, color){
 		$scope.flag[row][col] = color;
 	}
