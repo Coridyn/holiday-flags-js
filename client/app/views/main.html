@@ -1,22 +1,29 @@
 <table class="grid" color-drag>
-  <tr ng-repeat="row in flag track by $index" class="row">
-    <td ng-repeat="cell in row track by $index" ng-style="{ 'background-color': cell }" ng-click="setColor($parent.$index, $index, color)">{{cell}}</td>
-  </tr>
+	<tr ng-repeat="row in flag track by $index" class="row">
+		<td ng-repeat="cell in row track by $index" ng-style="{ 'background-color': cell }" ng-click="setColor($parent.$index, $index, color)">{{cell}}</td>
+	</tr>
 </table>
 
 <hr>
 <div>
-  <label for="colorInput">Select colour:</label>
-  <input id="colorInput" type="color" ng-model="color">
-  
-  <input type="text" ng-model="color"/>
+	<label for="colorInput">Select colour:</label>
+	<input id="colorInput" type="color" ng-model="color">
+	
+	<input type="text" ng-model="color"/>
 </div>
 
 <hr>
 <div>
-  <button class="btn btn-primary" ng-click="updateHolidayLights(flag)">Update Holiday Lights</button>
-  <button class="btn btn-success" ng-click="save(selectedFlag)">Save</button>
-  <button class="btn btn-warning pull-right" ng-click="newFlag()">New</button>
+	<button class="btn btn-primary" ng-click="updateHolidayLights(flag)">Update Holiday Lights</button>
+</div>
+
+<div class="panel">
+	<div class="well">
+		<input type="text" ng-model="flagName" />
+		<button class="btn btn-success" ng-click="save(selectedFlag)">Save</button>
+		
+		<button class="btn btn-warning pull-right" ng-click="newFlag()">New</button>
+	</div>
 </div>
 
 

@@ -5,6 +5,14 @@ var totalLights = 50,
 
 angular.module('clientApp').service('FlagService', function($http) {
 	var flag = null;
+	
+	this.cloneFlag = function(flag){
+		var newFlag = [];
+		for (var i = 0; i < flag.length; i++){
+			newFlag.push(flag[i].concat());
+		}
+		return newFlag;
+	}
 
 	this.initFlag = function() {
 		var rowCount = Math.floor(totalLights / colCount),
@@ -30,9 +38,14 @@ angular.module('clientApp').service('FlagService', function($http) {
 });
 
 angular.module('clientApp').controller('MainCtrl', function($scope, $http, FlagService) {
+	var savedFlags = [];
+	
 	$scope.flag = FlagService.getFlag();
 	$scope.color = "#ff0000";
-
+	$scope.flagName = '';
+	
+	
+	$scope.flags = [];
 	$http.get('/flags')
 		.success(function(data) {
 			$scope.flags = data;
@@ -44,7 +57,7 @@ angular.module('clientApp').controller('MainCtrl', function($scope, $http, FlagS
 		}).success(function(data) {
 			console.log('OK!', data);
 		}).error(function() {
-			alert('FAIL!');
+			console.log('FAIL!');
 		});
 	};
 
@@ -64,16 +77,26 @@ angular.module('clientApp').controller('MainCtrl', function($scope, $http, FlagS
 	};
 
 	$scope.save = function(flag) {
-		$http.put('/flag', {
-			name: flag.name,
-			lights: $scope.flag
-		}).success(function() {
-			console.log('put ok');
-		}).error(function() {
-			console.log('put fail');
-		})
-
+		// $http.put('/flag', {
+		// 	name: flag.name,
+		// 	lights: $scope.flag
+		// }).success(function() {
+		// 	console.log('put ok');
+		// }).error(function() {
+		// 	console.log('put fail');
+		// });
+		
+		var newFlag = {
+			name: $scope.flagName,
+			lights: FlagService.cloneFlag($scope.flag)
+		};
+		savedFlags.push(newFlag);
+		
+		// Update the list of flags
+		$scope.flags.unshift(newFlag);
 	};
+	
+	
 	
 	$scope.newFlag = function(){
 		angular.forEach($scope.flag, function(row, rowIndex){
@@ -81,6 +104,8 @@ angular.module('clientApp').controller('MainCtrl', function($scope, $http, FlagS
 				$scope.flag[rowIndex][cellIndex] = '#000000';
 			});
 		});
+		
+		$scope.flagName = '';
 	};
 	
 	$scope.setColor = function(row, col, color){
