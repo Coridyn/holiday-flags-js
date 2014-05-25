@@ -9,6 +9,17 @@ module.exports = [{
 		["#fcfbf4", "#fcfbf4", "#fcfbf4", "#fcfbf4", "#fcfbf4", "#fcfbf4", "#fcfbf4"],
 		["#fe2600", "#fe2600", "#fe2600", "#fe2600", "#fe2600", "#fe2600", "#fe2600"]
 	]
+},{
+	name: 'mexico',
+	lights: [
+		["#00ce00","#00ce00","#ffffff","#ffffff","#ffffff","#ff0000","#ff0000"],
+		["#00ce00","#00ce00","#ffffff","#ffffff","#ffffff","#ff0000","#ff0000"],
+		["#00ce00","#00ce00","#ffffff","#dbb449","#ffffff","#ff0000","#ff0000"],
+		["#00ce00","#00ce00","#ffffff","#aa7942","#ffffff","#ff0000","#ff0000"],
+		["#00ce00","#00ce00","#ffffff","#00ce00","#ffffff","#ff0000","#ff0000"],
+		["#00ce00","#00ce00","#ffffff","#ffde00","#ffffff","#ff0000","#ff0000"],
+		["#00ce00","#00ce00","#ffffff","#ffffff","#ffffff","#ff0000","#ff0000"]
+	]
 }, {
 	name: 'australia',
 	lights: [
